@@ -1,0 +1,82 @@
+### Authentification
+POST http://localhost:8081/login
+Content-Type: application/json
+
+{
+  "login": "test1@user.ru",
+  "password": "12345"
+}
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+        client.global.set("token", response.body['auth-token']);
+    });
+%}
+
+### File upload
+POST http://localhost:8081/file?filename=example.txt
+auth-token: Bearer {{ token }}
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="example.txt"
+Content-Type: text/plain
+
+Hello, world!
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### File list
+GET http://localhost:8081/list?limit=3
+auth-token: Bearer {{ token }}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### File rename
+PUT http://localhost:8081/file?filename=example.txt
+auth-token: Bearer {{ token }}
+Content-Type: application/json
+
+{
+  "filename": "newname.txt"
+}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### File download
+GET http://localhost:8081/file?filename=newname.txt
+auth-token: Bearer {{ token }}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### File delete
+DELETE http://localhost:8081/file?filename=newname.txt
+auth-token: Bearer {{ token }}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
+### Logout by JWT
+
+POST http://localhost:8081/logout
+auth-token: Bearer {{ token }}

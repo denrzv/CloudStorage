@@ -1,0 +1,5 @@
+CREATE USER app WITH PASSWORD 'app';
+GRANT ALL PRIVILEGES ON DATABASE db TO app;
+\c db;
+SET search_path = public;
+GRANT ALL PRIVILEGES ON SCHEMA public TO app;
