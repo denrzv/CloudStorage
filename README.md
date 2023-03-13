@@ -21,7 +21,7 @@ REST сервис для обработки запросов на аутенти
 Запускается на порту 8081/TCP.
 
 Создан в соответствии со [спецификацией](https://github.com/netology-code/jd-homeworks/blob/master/diploma/CloudServiceSpecification.yaml).
-
+Схема приложения по [ссылке](https://github.com/denrzv/CloudStorage/blob/main/Cloud%20Storage%20HLA.pdf)
 #### Запуск
 
 Для запуска:
@@ -32,7 +32,7 @@ git clone https://github.com/denrzv/CloudStorage.git
 
 * docker build -t cloudstorage .
 * docker-compose up
-* проверка работы выполняется через http.request тесты в проекте, также можно проверить с помощью готового FRONT [приложения]:(https://github.com/netology-code/jd-homeworks/blob/master/diploma/cloudservice.md) 
+* проверка работы выполняется через http.request тесты в проекте, также можно проверить с помощью готового FRONT [приложения](https://github.com/netology-code/jd-homeworks/blob/master/diploma/cloudservice.md) 
 * если будете использовать готовый FRONT не забудьте поправить как указано в описании к нему порт BACK на 8081
 
 #### Проверка
