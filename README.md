@@ -26,12 +26,17 @@ REST сервис для обработки запросов на аутенти
 
 Для запуска:
 
+```
 git clone https://github.com/denrzv/CloudStorage.git
+```
 
 Перейти в папку с проектом и выполнить:
 
-* docker build -t cloudstorage .
-* docker-compose up
+```
+docker build -t cloudstorage .
+docker-compose up
+```
+
 * проверка работы выполняется через http.request тесты в проекте, также можно проверить с помощью готового FRONT [приложения](https://github.com/netology-code/jd-homeworks/blob/master/diploma/cloudservice.md) 
 * если будете использовать готовый FRONT не забудьте поправить как указано в описании к нему порт BACK на 8081
 
