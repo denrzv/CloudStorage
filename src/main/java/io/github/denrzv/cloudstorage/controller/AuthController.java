@@ -46,7 +46,6 @@ public class AuthController {
     @PostMapping("/logout")
     public ResponseEntity<String> logout(HttpServletRequest request) {
         String token = request.getHeader("auth-token");
-        System.out.println("toekn -- " + token);
         if (token != null && token.startsWith("Bearer ")) {
             token = token.substring(7);
             jwtToken.invalidateToken(token);
