@@ -38,10 +38,9 @@ docker-compose up
 ```
 
 * проверка работы выполняется через http.request тесты в проекте, также можно проверить с помощью готового FRONT [приложения](https://github.com/netology-code/jd-homeworks/blob/master/diploma/cloudservice.md) 
-* если будете использовать готовый FRONT не забудьте поправить как указано в описании к нему порт BACK на 8081
+* если будете использовать готовый FRONT, не забудьте поправить, как указано в описании к нему порт BACK на 8081
 
 #### Проверка
-* Запустить Google Chrome без проверки CORS [инструкция](https://alfilatov.com/posts/run-chrome-without-cors/).
 * Перейти в [веб-интерфейс](http://localhost:8080/login) сервиса перевода средств.
 * Указать логин и пароль (предзагружены пользователи: test1@user.ru, test2@user.ru, test3@user.ru, пароль: 12345)
 * Проверить работу с файлами
