@@ -8,6 +8,7 @@ import java.io.Serial;
 import java.io.Serializable;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class JwtRequest implements Serializable {
     @Serial
